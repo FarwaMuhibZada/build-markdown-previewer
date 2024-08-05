@@ -22,7 +22,7 @@ This Markdown Previewer is a React-based web application that allows users to in
 life demo link [(https://farwamuhibzada.github.io/Pokemon-Search-App/)]
 
 
-![first page](./Capture.PNG)
+![first page](./src/assets/Capture.PNG)
 
 
 ## Technologies Used 🛠️
