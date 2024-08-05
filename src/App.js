@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { marked } from 'marked';
 import './App.css';
+
 const initialMarkdown = `# Heading
 ## Sub-heading
 [Link](https://example.com)
@@ -22,20 +23,19 @@ function App() {
     setMarkdown(e.target.value);
   };
   marked.setOptions({
-    breaks: true
+    breaks: true,
   });
   return (
     <>
-    <div id="heading">
-      <h1>Markdown Previewer</h1>
+      <div id="heading">
+        <h1>Markdown Previewer</h1>
       </div>
-    <div className="App">
-      <textarea id="editor" value={markdown} onChange={handleChange}></textarea>
-      <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }}></div>
-    </div>
+      <div className="App">
+        <textarea id="editor" value={markdown} onChange={handleChange}></textarea>
+        <div id="preview" dangerouslySetInnerHTML={{ __html: marked(markdown) }}></div>
+      </div>
     </>
   );
 }
 
 export default App;
-
