@@ -39,7 +39,5 @@ const MarkdownPreviwer = () => {
       </div>
     </>
   );
-
-
 }
 export default MarkdownPreviwer;
