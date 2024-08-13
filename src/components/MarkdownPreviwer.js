@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { marked } from 'marked';
+import ReactMarkdown from 'react-markdown';
 
 const initialMarkdown = `# Heading
 ## Sub-heading
@@ -21,10 +21,6 @@ function MarkdownPreviwer() {
     setMarkdown(e.target.value);
   };
 
-  marked.setOptions({
-    breaks: true,
-  });
-
   return (
     <>
       <div id="heading">
@@ -32,12 +28,12 @@ function MarkdownPreviwer() {
       </div>
       <div className="App">
         <textarea id="editor" value={markdown} onChange={handleChange} />
-        <div
-          id="preview"
-          dangerouslySetInnerHTML={{ __html: marked(markdown) }}
-        />
+        <div id="preview">
+          <ReactMarkdown>{markdown}</ReactMarkdown>
+        </div>
       </div>
     </>
   );
 }
+
 export default MarkdownPreviwer;
