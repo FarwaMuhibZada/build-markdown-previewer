@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'; // Import the remark-gfm plugin
 
 const initialMarkdown = `# Heading
 ## Sub-heading
@@ -12,7 +13,7 @@ Code block
 > Blockquote
 ![Image](https://via.placeholder.com/150)
 **Bold text**
-`;
+\nNew line here after two spaces at the end of this line.`;
 
 function MarkdownPreviwer() {
   const [markdown, setMarkdown] = useState(initialMarkdown);
@@ -29,7 +30,7 @@ function MarkdownPreviwer() {
       <div className="App">
         <textarea id="editor" value={markdown} onChange={handleChange} />
         <div id="preview">
-          <ReactMarkdown>{markdown}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
         </div>
       </div>
     </>
