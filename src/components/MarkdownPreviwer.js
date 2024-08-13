@@ -14,7 +14,7 @@ Code block
 **Bold text**
 `;
 
-const MarkdownPreviwer = () => {
+function MarkdownPreviwer() {
   const [markdown, setMarkdown] = useState(initialMarkdown);
 
   const handleChange = (e) => {
@@ -39,5 +39,5 @@ const MarkdownPreviwer = () => {
       </div>
     </>
   );
-};
+}
 export default MarkdownPreviwer;
